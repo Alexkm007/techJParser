@@ -3,6 +3,7 @@ package model.fildClass;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Data
@@ -15,6 +16,21 @@ public class ContextOneC {
     private Integer hash;
     @Column(length = 2048)
     private String text;
+    private LocalDateTime dateEvent;
+    private Long duration;
+    @ManyToOne
+    private ProcessName processName;
+    private String clientID;
+    @ManyToOne
+    private ApplicationName applicationName;
+    @ManyToOne
+    private ComputerName computerName;
+    private Long connectID;
+    private Long sessionID;
+    @ManyToOne
+    private UserEvent user;
+    private Long transId;
+    private Long dbPid;
 
     @Override
     public boolean equals(Object o) {
