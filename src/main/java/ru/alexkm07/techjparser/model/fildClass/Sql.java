@@ -1,4 +1,4 @@
-package model.fildClass;
+package ru.alexkm07.techjparser.model.fildClass;
 
 import lombok.Data;
 

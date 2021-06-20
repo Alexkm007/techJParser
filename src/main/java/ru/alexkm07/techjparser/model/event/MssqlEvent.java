@@ -1,7 +1,7 @@
-package model.event;
+package ru.alexkm07.techjparser.model.event;
 
 import lombok.Data;
-import model.fildClass.*;
+import ru.alexkm07.techjparser.model.fildClass.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -33,7 +33,5 @@ public class MssqlEvent {
     private Sql sql;
     private Long rows;
     private Long rowsAffected;
-    @ManyToOne
-    private ContextOneC context;
 
 }

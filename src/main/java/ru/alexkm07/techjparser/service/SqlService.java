@@ -1,8 +1,9 @@
-package service;
+package ru.alexkm07.techjparser.service;
 
-import model.fildClass.Sql;
+import ru.alexkm07.techjparser.model.fildClass.Sql;
 import org.springframework.stereotype.Service;
-import repository.SqlRepository;
+import ru.alexkm07.techjparser.repository.SqlRepository;
+
 
 @Service
 public class SqlService {

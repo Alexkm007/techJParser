@@ -1,9 +1,9 @@
-package service;
+package ru.alexkm07.techjparser.service;
 
-import model.fildClass.ContextOneC;
-import model.fildClass.Sql;
+import ru.alexkm07.techjparser.model.fildClass.ContextOneC;
 import org.springframework.stereotype.Service;
-import repository.ContextOneCRepository;
+import ru.alexkm07.techjparser.repository.ContextOneCRepository;
+
 
 @Service
 public class ContextOneCService {

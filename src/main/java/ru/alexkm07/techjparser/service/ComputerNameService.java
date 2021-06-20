@@ -1,8 +1,9 @@
-package service;
+package ru.alexkm07.techjparser.service;
 
-import model.fildClass.ComputerName;
+import ru.alexkm07.techjparser.model.fildClass.ComputerName;
 import org.springframework.stereotype.Service;
-import repository.ComputerNameRepository;
+import ru.alexkm07.techjparser.repository.ComputerNameRepository;
+
 @Service
 public class ComputerNameService {
     private final ComputerNameRepository computerNameRepository;

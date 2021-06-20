@@ -1,8 +1,9 @@
-package service;
+package ru.alexkm07.techjparser.service;
 
-import model.fildClass.ProcessName;
+import ru.alexkm07.techjparser.model.fildClass.ProcessName;
 import org.springframework.stereotype.Service;
-import repository.ProcessNameRepository;
+import ru.alexkm07.techjparser.repository.ProcessNameRepository;
+
 @Service
 public class ProcessNameService {
     private final ProcessNameRepository processNameRepository;

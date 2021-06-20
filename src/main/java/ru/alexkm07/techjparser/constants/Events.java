@@ -1,4 +1,4 @@
-package constants;
+package ru.alexkm07.techjparser.constants;
 
 public interface Events {
      String eventNames = "DBMSSQL,Context";

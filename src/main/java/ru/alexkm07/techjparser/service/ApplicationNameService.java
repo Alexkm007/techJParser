@@ -1,9 +1,9 @@
-package service;
+package ru.alexkm07.techjparser.service;
 
-import model.fildClass.ApplicationName;
-import model.fildClass.ComputerName;
+import ru.alexkm07.techjparser.model.fildClass.ApplicationName;
 import org.springframework.stereotype.Service;
-import repository.ApplicationNameRepository;
+import ru.alexkm07.techjparser.repository.ApplicationNameRepository;
+
 
 @Service
 public class ApplicationNameService {
@@ -14,7 +14,7 @@ public class ApplicationNameService {
         this.applicationNameRepository = applicationNameRepository;
     }
 
-    ApplicationName findByName(String s){
+    public ApplicationName findByName(String s){
         return applicationNameRepository.findByName(s);
     }
 
