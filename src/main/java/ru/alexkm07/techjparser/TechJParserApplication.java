@@ -40,18 +40,21 @@ public class TechJParserApplication implements CommandLineRunner {
 //        }
 //
 //        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get(args[0]));
-        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs_20210603/1c_techlogs/"));
+        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs/dbmssql/"));
 
+        int i = 0;
         for (Path pathLog : pathListLogs) {
-
+            i++;
             LogReader logReader = new LogReader(pathLog);
-            logReader.readLogFile();
+            System.out.println("parsing log " + pathLog.toString() + " files count " + pathListLogs.size() +  " files parsing " + i);
+
+            if (!logReader.readLogFile()) continue;
             List<Map<String, String>> listRows = logReader.getLogRows();
 
             for (Map<String, String> rowLog : listRows) {
                 Object o = logToEventConverter.rowToEvent(rowLog);
-                System.out.println(o);
             }
+
         }
 
     }

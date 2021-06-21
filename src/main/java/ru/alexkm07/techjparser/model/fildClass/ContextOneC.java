@@ -14,7 +14,7 @@ public class ContextOneC {
     @SequenceGenerator(name = "context_seq", sequenceName = "context_seq")
     private Long id;
     private Integer hash;
-    @Column(length = 2048)
+    @Column(length = 500000)
     private String text;
     private LocalDateTime dateEvent;
     private Long duration;

@@ -4,7 +4,7 @@ public interface Events {
      String eventNames = "DBMSSQL,Context";
 
      String dbmssqlEvent = "DBMSSQL";
-     String  contextEvent = "Context";
+     String contextEvent = "Context";
 
      String na  = "N/A";
 

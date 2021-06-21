@@ -11,10 +11,10 @@ public class Sql {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sql_seq")
     @SequenceGenerator(name = "sql_seq", sequenceName = "sql_seq")
-    Long id;
-    Integer hash;
-    @Column(length = 2048)
-    String query;
+    private Long id;
+    private Integer hash;
+    @Column(length = 500000)
+    private String query;
 
     @Override
     public boolean equals(Object o) {

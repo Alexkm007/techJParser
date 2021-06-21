@@ -23,7 +23,7 @@ public class MSSQLEventService {
     }
 
     public MssqlEvent findByDateAndDurationAndProcessNameAndSql(LocalDateTime date, Long duration, ProcessName processName, Sql sql){
-        return mssqlEventRepository.findByDateAndDurationAndProcessNameAndSql(date, duration,processName,sql);
+        return mssqlEventRepository.findByDateEventAndDurationAndProcessNameAndSql(date, duration,processName,sql);
     }
 
     public MssqlEvent save(MssqlEvent mssqlEvent){
