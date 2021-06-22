@@ -30,13 +30,12 @@ public class TlockEvent {
     private Long sessionID;
     @ManyToOne
     private UserEvent user;
-    private Long transId;
     private Long waitConnections;
     @Column(length = 500000)
     private String contextText;
-    @Column(length = 5000)
+    @Column(length = 1000)
     private String locks;
-    private String connectionID;
     @ManyToOne
     private Regions regions;
+    private Integer hash;
 }

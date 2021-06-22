@@ -40,7 +40,7 @@ public class TechJParserApplication implements CommandLineRunner {
 //        }
 //
 //        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get(args[0]));
-        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs/dbmssql/"));
+        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs/"));
 
         int i = 0;
         for (Path pathLog : pathListLogs) {

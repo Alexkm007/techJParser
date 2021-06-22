@@ -1,6 +1,6 @@
 package ru.alexkm07.techjparser.service;
 
-import ru.alexkm07.techjparser.model.fildClass.ContextOneC;
+import ru.alexkm07.techjparser.model.event.ContextOneC;
 import org.springframework.stereotype.Service;
 import ru.alexkm07.techjparser.repository.ContextOneCRepository;
 

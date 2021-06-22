@@ -10,21 +10,22 @@ import java.util.Objects;
 public class Regions {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "proc_seq")
-    @SequenceGenerator(name = "proc_seq", sequenceName = "proc_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "reg_seq")
+    @SequenceGenerator(name = "reg_seq", sequenceName = "reg_seq")
     private Long id;
-    private String name;
+    @Column(length = 1000)
+    private String text;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Regions)) return false;
         Regions that = (Regions) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getName(), that.getName());
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getText(), that.getText());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName());
+        return Objects.hash(getId(), getText());
     }
 }

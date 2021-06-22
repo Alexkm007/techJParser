@@ -1,6 +1,6 @@
 package ru.alexkm07.techjparser.repository;
 
-import ru.alexkm07.techjparser.model.fildClass.ContextOneC;
+import ru.alexkm07.techjparser.model.event.ContextOneC;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;

@@ -1,6 +1,10 @@
-package ru.alexkm07.techjparser.model.fildClass;
+package ru.alexkm07.techjparser.model.event;
 
 import lombok.Data;
+import ru.alexkm07.techjparser.model.fildClass.ApplicationName;
+import ru.alexkm07.techjparser.model.fildClass.ComputerName;
+import ru.alexkm07.techjparser.model.fildClass.ProcessName;
+import ru.alexkm07.techjparser.model.fildClass.UserEvent;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
