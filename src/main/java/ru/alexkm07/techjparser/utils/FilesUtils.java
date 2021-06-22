@@ -18,6 +18,7 @@ public class FilesUtils {
 
         try {
             matches = Files.find(pathToLogs,maxDepth,(path, basicFileAttributes) -> String.valueOf(path).endsWith(".log"));
+            //pathList = matches.filter(file->file.toFile().length() < 15000000).collect(Collectors.toList());
             pathList = matches.collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();

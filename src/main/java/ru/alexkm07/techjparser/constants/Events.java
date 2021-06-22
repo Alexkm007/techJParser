@@ -5,7 +5,8 @@ public interface Events {
 
      String dbmssqlEvent = "DBMSSQL";
      String contextEvent = "Context";
-
+     String tlockEvent = "TLOCK";
+     String timeoutEvent = "TTIMEOUT";
      String na  = "N/A";
 
      String process = "process";
@@ -21,7 +22,7 @@ public interface Events {
      String dbpid = "dbpid";
      String rows  = "Rows";
      String rowsAffected = "RowsAffected";
-
-
+     String waitConnections = "WaitConnections";
+     String regions = "Regions";
 
 }

@@ -19,8 +19,6 @@ public class TimeoutEvent {
     private Long duration;
     @ManyToOne
     private ProcessName processName;
-    @ManyToOne
-    private Process process;
     private String clientID;
     @ManyToOne
     private ApplicationName applicationName;
@@ -30,8 +28,8 @@ public class TimeoutEvent {
     private Long sessionID;
     @ManyToOne
     private UserEvent user;
-    private Long transId;
     private Long waitConnections;
     @Column(length = 500000)
     private String contextText;
+    private Integer hash;
 }
