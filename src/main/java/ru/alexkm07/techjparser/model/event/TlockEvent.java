@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 public class TlockEvent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "mssql_seq")
-    @SequenceGenerator(name = "mssql_seq", sequenceName = "mssql_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tlock_seq")
+    @SequenceGenerator(name = "tlock_seq", sequenceName = "tlock_seq")
     private Long id;
     private LocalDateTime dateEvent;
     private Long duration;
