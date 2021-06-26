@@ -30,6 +30,7 @@ public class MssqlEvent {
     private Long transId;
     private Long dbPid;
     @ManyToOne
+    @Column(length = 8000)
     private Sql sql;
     private Long rows;
     private Long rowsAffected;

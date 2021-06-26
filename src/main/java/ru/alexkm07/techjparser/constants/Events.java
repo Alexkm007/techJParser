@@ -7,8 +7,11 @@ public interface Events {
      String contextEvent = "Context";
      String tlockEvent = "TLOCK";
      String timeoutEvent = "TTIMEOUT";
+     String excpEvent = "EXCP";
+     String excpcntxEvent = "EXCPCNTX";
      String na  = "N/A";
 
+     String dateTime = "dateTime";
      String process = "process";
      String processName = "p:processName";
      String clientID = "t:clientID";
@@ -24,5 +27,16 @@ public interface Events {
      String rowsAffected = "RowsAffected";
      String waitConnections = "WaitConnections";
      String regions = "Regions";
+     String exception = "Exception";
+     String descr = "Descr";
+     String sql = "Sql";
+     String context = "Context";
+     String locks = "Locks";
+     String duration = "duration";
+     String clientComputerName = "ClientComputerName";
+     String serverComputerName = "ServerComputerName";
+     String userName  = "UserName";
+     String connectString = "ConnectString";
+     String eventName = "eventName";
 
 }
