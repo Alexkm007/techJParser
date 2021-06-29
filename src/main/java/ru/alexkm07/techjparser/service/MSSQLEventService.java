@@ -22,12 +22,12 @@ public class MSSQLEventService {
         return mssqlEventRepository.findByDateEvent(localDateTime);
     }
 
-    public MssqlEvent findByDateAndDurationAndProcessNameAndSql(LocalDateTime date, Long duration, ProcessName processName, Sql sql){
-        return mssqlEventRepository.findByDateEventAndDurationAndProcessNameAndSql(date, duration,processName,sql);
+    public MssqlEvent findByDateAndDuration(LocalDateTime date, Long duration){
+        return mssqlEventRepository.findByDateEventAndDuration(date, duration);
     }
 
     public MssqlEvent save(MssqlEvent mssqlEvent){
-        return  mssqlEventRepository.saveAndFlush(mssqlEvent);
+        return  mssqlEventRepository.save(mssqlEvent);
     }
 
 }

@@ -21,7 +21,7 @@ public class RegionsService {
     }
 
     public Regions save(Regions regions){
-        return regionsRepository.saveAndFlush(regions);
+        return regionsRepository.save(regions);
     }
 
 }

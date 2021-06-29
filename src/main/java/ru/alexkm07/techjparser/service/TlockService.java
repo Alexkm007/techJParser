@@ -25,7 +25,7 @@ public class TlockService {
     }
 
     public TlockEvent save(TlockEvent tlockEvent){
-        return  tlockEventRepository.saveAndFlush(tlockEvent);
+        return  tlockEventRepository.save(tlockEvent);
     }
 
 }

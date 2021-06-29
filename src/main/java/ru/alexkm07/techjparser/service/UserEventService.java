@@ -14,11 +14,11 @@ public class UserEventService {
     }
 
     public UserEvent findByName(String name){
-        return userEventRepository.findByName(name);
+        return userEventRepository.findByUserName(name);
     }
 
     public UserEvent save(UserEvent userEvent){
-        return userEventRepository.saveAndFlush(userEvent);
+        return userEventRepository.save(userEvent);
     }
 
 }

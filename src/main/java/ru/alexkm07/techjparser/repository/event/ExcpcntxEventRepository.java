@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 
 public interface ExcpcntxEventRepository extends JpaRepository<ExcpсntxEvent, Long> {
 
-    ExcpсntxEvent findByDate(LocalDateTime dateTime);
+    ExcpсntxEvent findByDateEvent(LocalDateTime dateTime);
 
 }

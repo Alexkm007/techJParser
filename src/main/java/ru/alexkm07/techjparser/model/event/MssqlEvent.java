@@ -8,6 +8,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Table(indexes = {
+        @Index(name = "duration", columnList = "duration"),
+        @Index(name = "processName", columnList = "process_name_id")
+})
 public class MssqlEvent {
 
     @Id
@@ -25,16 +29,14 @@ public class MssqlEvent {
     private ComputerName computerName;
     private Long connectID;
     private Long sessionID;
+    private Long dbpid;
     @ManyToOne
     private UserEvent user;
     private Long transId;
-    private Long dbPid;
     @ManyToOne
-    @Column(length = 8000)
     private Sql sql;
     private Long rows;
     private Long rowsAffected;
-    private String appId;
     @Column(length = 500000)
     private String contextText;
 }

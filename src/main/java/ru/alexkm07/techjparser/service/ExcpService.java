@@ -16,11 +16,11 @@ public class ExcpService {
     }
 
     public ExcpEvent save( ExcpEvent excpEvent){
-       return excpEventRepository.saveAndFlush(excpEvent);
+       return excpEventRepository.save(excpEvent);
     }
 
-    public ExcpEvent findByDateEventAndExceptionAndAndHash(LocalDateTime dateTime, String exception, Integer hash){
-        return excpEventRepository.findByDateEventAndExceptionAndAndHash(dateTime,exception,hash);
+    public ExcpEvent findByDateEventAndAndHash(LocalDateTime dateTime,  Integer hash){
+        return excpEventRepository.findByDateEventAndHash(dateTime,hash);
     }
 
 }

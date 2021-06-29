@@ -16,13 +16,12 @@ public class SqlService {
         this.sqlRepository = sqlRepository;
     }
 
-    public Sql findByHashAndAndQuery(Integer hash, String query){
-        return sqlRepository.findByHashAndAndQuery(hash,query);
+    public Sql findByHashAndMd5hash(Integer hash, String md5Hash){
+        return sqlRepository.findByHashAndMd5hash(hash,md5Hash);
     }
 
     public Sql save(Sql sql){
-        //log.log(Level.DEBUG,"SQL length query: " + sql.getQuery().length());
-        return sqlRepository.saveAndFlush(sql);
+        return sqlRepository.save(sql);
     }
 
 }

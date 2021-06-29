@@ -3,10 +3,10 @@ package ru.alexkm07.techjparser;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import ru.alexkm07.techjparser.utils.FilesUtils;
+import ru.alexkm07.techjparser.utils.InfoForSearsh;
 import ru.alexkm07.techjparser.utils.LogReader;
 import ru.alexkm07.techjparser.utils.LogToEventConverter;
 
@@ -22,9 +22,12 @@ public class TechJParserApplication implements CommandLineRunner {
 
 
     private final LogToEventConverter logToEventConverter;
+    private final LogReader logReader;
 
-    public TechJParserApplication(LogToEventConverter logToEventConverter) {
+
+    public TechJParserApplication(LogToEventConverter logToEventConverter, LogReader logReader) {
         this.logToEventConverter = logToEventConverter;
+        this.logReader = logReader;
     }
 
     public static void main(String[] args) {
@@ -40,21 +43,34 @@ public class TechJParserApplication implements CommandLineRunner {
 //        }
 //
 //        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get(args[0]));
-        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs/"));
-
+        List<Path> pathListLogs = FilesUtils.pathsLogsToList(Paths.get("/home/aleksei/Documents/JavaDev/techJParser/1c_techlogs/excep/"));
+        logReader.setInfoForSearsh(new InfoForSearsh());
         int i = 0;
         for (Path pathLog : pathListLogs) {
             i++;
-            LogReader logReader = new LogReader(pathLog);
-            System.out.println("parsing log " + pathLog.toString() + " files count " + pathListLogs.size() +  " files parsing " + i);
+            logReader.setLogPath(pathLog);
 
+            long startParsingFile = System.currentTimeMillis();
             if (!logReader.readLogFile()) continue;
             List<Map<String, String>> listRows = logReader.getLogRows();
-
+            if(listRows == null){
+                continue;
+            }
+            long endParsingFile = System.currentTimeMillis();
+            //System.out.println("parsing time " + (endParsingFile-startParsingFile));
+            long startSaveObjects = System.currentTimeMillis();
+            int rowCount = 0;
             for (Map<String, String> rowLog : listRows) {
                 Object o = logToEventConverter.rowToEvent(rowLog);
-            }
+                if(o!=null) rowCount++;
 
+            }
+            long endSaveObjects = System.currentTimeMillis();
+            //System.out.println("saving time " + (endSaveObjects-startSaveObjects));
+            System.out.println("parsing log " + pathLog.toString() + " files count "
+                    + pathListLogs.size() +  " files parsing " + i
+                    +" processing time ms " + (endSaveObjects-startParsingFile)
+                    + " event in file " + listRows.size() +" saved rows " + rowCount);
         }
 
     }

@@ -25,6 +25,6 @@ public class ContextOneCService {
     }
 
     public ContextOneC save(ContextOneC contextOneC){
-        return contextOneCRepository.saveAndFlush(contextOneC);
+        return contextOneCRepository.save(contextOneC);
     }
 }

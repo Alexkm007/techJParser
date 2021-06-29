@@ -7,6 +7,6 @@ import java.time.LocalDateTime;
 
 public interface ExcpEventRepository extends JpaRepository<ExcpEvent, Long> {
 
-    ExcpEvent findByDateEventAndExceptionAndAndHash(LocalDateTime dateTime, String exception, Integer hash);
+    ExcpEvent findByDateEventAndHash(LocalDateTime dateTime,Integer hash);
 
 }

@@ -7,6 +7,10 @@ import java.util.Objects;
 
 @Entity
 @Data
+@Table(indexes = {
+        @Index(name = "hash", columnList = "hash")
+        ,@Index(name = "md5hash", columnList = "md5hash")
+})
 public class Sql {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sql_seq")
@@ -15,6 +19,8 @@ public class Sql {
     private Integer hash;
     @Column(length = 500000)
     private String query;
+    @Column(length = 32)
+    private String md5hash;
 
     @Override
     public boolean equals(Object o) {

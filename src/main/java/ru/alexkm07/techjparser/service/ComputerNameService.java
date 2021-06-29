@@ -13,11 +13,11 @@ public class ComputerNameService {
     }
 
     public ComputerName findByName(String s){
-        return computerNameRepository.findByName(s);
+        return computerNameRepository.findByCompName(s);
     }
 
     public ComputerName save(ComputerName computerName){
-        return computerNameRepository.saveAndFlush(computerName);
+        return computerNameRepository.save(computerName);
     }
 
 }

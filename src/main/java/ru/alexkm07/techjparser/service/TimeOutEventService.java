@@ -26,7 +26,7 @@ public class TimeOutEventService {
     }
 
     public TimeoutEvent save(TimeoutEvent timeoutEvent){
-        return  timeoutEventRepository.saveAndFlush(timeoutEvent);
+        return  timeoutEventRepository.save(timeoutEvent);
     }
 
 }
