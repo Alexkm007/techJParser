@@ -11,6 +11,6 @@ public interface MssqlEventRepository extends JpaRepository<MssqlEvent,Long> {
 
     MssqlEvent findByDateEvent(LocalDateTime localDateTime);
 
-    MssqlEvent findByDateEventAndDurationAndProcessNameAndSql(LocalDateTime date, Long duration, ProcessName processName, Sql sql);
+    MssqlEvent findByDateEventAndDuration(LocalDateTime date, Long duration);
 
 }

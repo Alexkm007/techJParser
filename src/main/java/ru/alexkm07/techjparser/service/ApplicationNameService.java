@@ -15,11 +15,11 @@ public class ApplicationNameService {
     }
 
     public ApplicationName findByName(String s){
-        return applicationNameRepository.findByName(s);
+        return applicationNameRepository.findByAppName(s);
     }
 
     public ApplicationName save(ApplicationName applicationName){
-        return applicationNameRepository.saveAndFlush(applicationName);
+        return applicationNameRepository.save(applicationName);
     }
 
 }

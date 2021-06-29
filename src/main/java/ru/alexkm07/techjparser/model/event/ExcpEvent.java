@@ -16,15 +16,16 @@ public class ExcpEvent {
     @SequenceGenerator(name = "excp_seq", sequenceName = "excp_seq")
     private Long id;
     private LocalDateTime dateEvent;
+    private String process;
     @ManyToOne
     private ProcessName processName;
-    @ManyToOne
-    private Process process;
     private String clientID;
     @ManyToOne
     private ApplicationName applicationName;
     @ManyToOne
     private ComputerName computerName;
+    private Long connectId;
+    @Column(length = 2000)
     private String exception;
     @Column(length = 5000)
     private String descr;

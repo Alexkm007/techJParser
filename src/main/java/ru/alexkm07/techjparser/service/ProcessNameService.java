@@ -13,11 +13,11 @@ public class ProcessNameService {
     }
 
     public ProcessName findByName(String s){
-        return processNameRepository.findByName(s);
+        return processNameRepository.findByProc(s);
     }
 
     public ProcessName save(ProcessName processName){
-        return processNameRepository.saveAndFlush(processName);
+        return processNameRepository.save(processName);
     }
 
 }

@@ -1,7 +1,7 @@
 package ru.alexkm07.techjparser.constants;
 
 public interface Events {
-     String eventNames = "DBMSSQL,Context";
+     String eventNames = "DBMSSQL,Context,TLOCK,TTIMEOUT,EXCP,EXCPCNTX";
 
      String dbmssqlEvent = "DBMSSQL";
      String contextEvent = "Context";
@@ -38,5 +38,6 @@ public interface Events {
      String userName  = "UserName";
      String connectString = "ConnectString";
      String eventName = "eventName";
+     String exceptClientID = "ClientID";
 
 }

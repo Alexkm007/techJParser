@@ -33,7 +33,7 @@ public class TlockEvent {
     private Long waitConnections;
     @Column(length = 500000)
     private String contextText;
-    @Column(length = 1000)
+    @Column(length = 50000)
     private String locks;
     @ManyToOne
     private Regions regions;
